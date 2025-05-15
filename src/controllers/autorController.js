@@ -45,7 +45,7 @@ class AutorController {
             const id = req.params.id;
             await autor.findByIdAndDelete(id);
             res.status(200).json({ message: "autor excluido com sucesso"});
-        } catch {
+        } catch (erro) {
             res.status(500).json({ message: `${erro.message} - falha na exclusão` });
         }
     };

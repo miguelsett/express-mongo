@@ -49,7 +49,7 @@ class LivroController {
             const id = req.params.id;
             await livro.findByIdAndDelete(id);
             res.status(200).json({ message: "livro excluido com sucesso"});
-        } catch {
+        } catch (erro) {
             res.status(500).json({ message: `${erro.message} - falha na exclusão` });
         }
     };
